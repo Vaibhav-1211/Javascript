@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <h1>Differnt Events Types in Javascript</h1>
+            <a href="#" class="esj-1" onclick="alert('Acknowledge Me!')">
+                <span class="esj-text" id="">
+                    Simple Inline alert()
+                </span>
+            </a>
+        </div>
+
+        <div class="">
+            <span></span>
+            <a href="#" class="" onclick="callingFunction()">
+                <span class="">
+                    By Calling a Function
+                </span></a>
+        </div>
+
+        <div class="">
+            <a href="#" class="">
+                <span class="" id="thirdway">Inline event</span>
+            </a>
+        </div>
+
+        <div class="">
+            <span class="">
+                <a href="#" class="" id="fourthway">
+                    <span class="">
+                        Event Listeners
+                    </span>
+                </a>
+            </span>
+        </div>
+
+        <!-- Event object  -->
+        <div>
+            <h1> let's See what is Event Object 😊</h1>
+            <a href="#" class="" id="fourthWay">
+                <span class="">
+                    Event Listeners
+                </span>
+            </a>
+        </div>
+
+        <div>
+            <h1>Mouse Event in Javascript 😊</h1>
+
+            <p id="myP" onmousedown="mouseDown()" onmouseup="mouseUp()">Click the text! The mouseDown() function is
+                trigger when the mouse
+                button is pressed down over this paragraph , and sets the color of the text to red.The mouseUp()
+                function is triggered when the
+                mouse button is released, and sets the color of the text to green.</p>
+        </div>
+
+        <!-- Mouse enter and mouse leave event in javacript -->
+        <div class="">
+            <div id="box">
+                <h1>Box</h1>
+            </div>
+        </div>
+
+        <!-- Keyboard Event  -->
+        <div>
+            <p>A function is triggered when the user is pressing a key in the input field.</p>
+            <br>
+            <input type="text" class="effect-1" onkeypress="keyPress()" onkeydown="keyDown()" onkeyup="keyUp()">
+            <br>
+            <p id="keys"></p>
+        </div>
+
+        <!-- onChange event in javascript  -->
+        <div>
+            <label for="">Your Name</label>
+            <input type="text" id="ice">
+            <br>
+            <label for="">Choose an ice cream flavor❤️
+                <select name="iceCreams" id="iceCreams" onchange="selectElement()">
+                    <option value="">Select One</option>
+                    <option value="chocolate">Chocolate</option>
+                    <option value="sardine">Sardine</option>
+                    <option value="vanilla">Vanilla</option>
+                </select>
+            </label>
+            <br>
+            <div id="result"></div>
+        </div>
+
+    </div>
+
+    <script>
+        // 2nd way of writing
+        // const callingFunction = () => {
+        //     alert('Most common way of writing functions')
+        // }
+
+        // // 3rd way of writing function
+        // const thirdway = document.getElementById('thirdway');
+
+        // thirdway.onclick = function(){
+        //     alert('By ID comman way of writing function again')
+        // }
+
+        // thirdway.onclick = function(){
+        //     console.log('By ID comman way of writing function again')
+        // }
+        // // 4th way of writing function
+        // const fouthway = document.querySelector('#fourthway');
+
+        // fourthway.addEventListener('click', () =>{
+        //     alert('I am very great person Your Trible Chief Roman Reigns Eventlistener')
+        // })
+
+        // fourthway.addEventListener('click', () =>{
+        //     console.log('I am very great person Your Trible Chief Roman Reigns Eventlistener')
+        // })
+        //benifits of using the eventlistener is you can use them multiple time.
+
+
+        // 2>Event Object
+        //to get all the information about the event, we can use the Event object
+        //work of event object is to give more information about fired events
+
+        // const fourthWay = document.getElementById('fourthWay');
+
+        // const checkEvent = () => {
+        //     alert("we are seeing Event Object")
+        //     console.log(event);
+        //     console.log(event.target);
+        //     console.log(event.type);
+        // }
+
+        // fourthWay.addEventListener('click', checkEvent);
+
+        //3. Mouse event in Javascript
+        function mouseDown() {
+            document.getElementById("myP").style.color = 'green';
+        }
+
+        function mouseUp() {
+            document.getElementById("myP").style.color = 'red'
+        }
+
+        //4. Mouse Enter and mouse leave event javascript
+
+        const mEnter = document.getElementById('box');
+
+        mEnter.addEventListener('mouseenter', () => {
+            mEnter.style.backgroundColor = 'red';
+            console.log('Mouse Enter Bro');
+        })
+
+        mEnter.addEventListener('mouseleave', () => {
+            mEnter.style.backgroundColor = 'pink';
+            console.log('Mouse leave Bro');
+        })
+
+        //Keyboard events
+        const keyPress = () => {
+            document.getElementById('keys').innerHTML = `you press ${event.key} and it's code is: ${event.code}`;
+        }
+
+        //better to use 2nd and 3rd once
+
+        const keyDown = () => {
+            document.getElementById('keys').innerHTML = `key is down`;
+            //when we click backlash to delete then it will run
+        }
+
+        const keyUp = () => {
+            document.getElementById('keys').innerHTML = `key is up`;
+            //when we click backlash to delete then it will run
+        }
+
+        //Input events in js onchanged event 
+        const selectElement = () => {
+            const inputChange = document.getElementById('ice').value;
+            const iceCreams = document.getElementById('iceCreams').value
+            const result = document.getElementById('result');
+
+            result.innerHTML = `${inputChange} selects ${iceCreams} ice creame flavour for vaibhav`
+            // console.log(`${inputChange} and ${iceCreams}`);
+        }
+
+    </script>
+
+</body>
+
+</html>
