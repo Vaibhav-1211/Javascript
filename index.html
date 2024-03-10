@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+</head>
+<style>
+    /* #div-one {
+        color: red;
+    }
+
+    #div-two {
+        color: burlywood;
+    }
+
+    #div-three {
+        color: brown;
+    }
+
+    button {
+        cursor: pointer;
+        height: 100px;
+        width: 200px;
+        background-color: #3a3a3a;
+        color: white;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: x-large;
+    }
+
+    #pb-1 {
+        background-color: lightgrey;
+        width: 300px;
+        height: 200px;
+        padding: 50px;
+        margin: 20px;
+    }
+
+    #cb-1 {
+        background-color: lightgreen;
+        width: 300px;
+        height: 200px;
+        padding: 50px;
+        margin: 20px;
+        position: absolute;
+    } */
+    * {
+        background-color: lightgray;
+    }
+</style>
+
+<body>
+    <!-- <div class="div-main">
+        <p>Plz Like the video</p>
+        <form action="">
+            <label for="gender">Male</label>
+            <input type="radio" name="gender" id="">
+            <label for="gender">Female</label>
+            <input type="radio" name="gender" id="">
+        </form>
+    </div>
+    <p id="div-one">>share the video</p>
+    <p id="div-two">don't forget to subscribe the video</p>
+    <p id="div-three">
+    <h1 id="heading">Changed the content of the H1</h1>
+    </p>
+    <button onclick="changeContent()">Click ME</button>
+    <br> -->
+
+    <!-- <h1>Adv.JS</h1> -->
+    <!-- Advance Js -->
+    <!-- event propagation -->
+    <!-- <div id="pb-1">Parent Box
+        <div id="cb-1">Child Box</div>
+    </div> -->
+    <div id="container">
+
+    </div>
+</body>
+<script>
+    const container = document.querySelector("#container");
+    const request = new XMLHttpRequest();//creating an instance 
+    // request.open('GET', "https://restcountries.com/v3.1/name/aruba?fullText=true");
+    request.send();
+
+    //to get the response 
+    request.addEventListener('load', function () {
+        //console.log(this.responseText);
+        const [data] = JSON.parse(this.responseText);
+        // console.log(data);
+        const htmlData = `
+        <div id="card">
+            <article id="card-body">
+                <img src="${data.flag}" alt="" class="card-body-img" />
+                <h1 class="card-body-title">
+                    ${data.name}<span></span>
+                    <h1>
+                        <p class="card-body-text">
+                            capital :${data.capital}
+                        </p>
+                        <div class="card-footer">
+                            <div class="card-footer-social">
+                                <h3>${data.nativeName}</h3>
+                                <p>Native language</p>
+                            </div>
+                            <div class="card-footer-social">
+                                <h3>${data.population}</h3>
+                                <p>Population</p>
+                            </div>
+                            <div class="card-footer-social">
+                                <h3>${data.demonym}</h3>
+                                <p>Demonym</p>
+                            </div>
+                        </div>
+                    </h1>
+                </h1>
+            </article>
+        </div>
+        `;
+        container.insertAdjacentHTML("afterbegin",htmlData)
+    })
+</script>
+
+<!-- <script>//src="./ES6/AdvJavascript.js"
+    // const changeContent = () => {
+        // we can directly write
+        //document.getElementById('heading').innerHTML = "Welcome to Friday night Smack Down";
+
+        //by taking the refrence, heading is the object here
+        // const headingchange = document.getElementById('heading');
+        // headingchange.innerHTML = "Welcome to Friday night Smack Down"
+
+        // //for getting class element in console section by class name
+        // console.log(document.getElementsByClassName('div-main'));
+
+        // console.log(document.getElementsByTagName('p'));
+        // console.log(document.getElementsByName('gender'));
+
+        //Now the same we have is the query selector 
+
+        // document.querySelector('#heading').innerHTML = "Welcome to Friday night Smack Down"
+        // . for class
+        // # for id 
+        // or direct element we can use 
+        //querySelector returns the first matching valuess whereas 
+        //querySelectorAll() will return all the elements
+
+        // Event Propagation
+        // const parentID = document.getElementById('pb-1');
+        // const childID = document.getElementById('cb-1')
+
+        // const parentCall = () => {
+        //     alert('Parent box');
+        //     console.log(parentCall);
+        // }
+        // const childCall = () => {
+        //     alert("child box")
+        //     console.log(childCall);
+        //     event.stopPropagation();
+        // }
+        // parentID.addEventListener('click', parentCall, true)
+        // childID.addEventListener('click', childCall, true)
+    }
+</script> -->
+
+</html>
