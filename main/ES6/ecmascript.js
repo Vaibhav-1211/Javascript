@@ -686,10 +686,10 @@
 // console.log(curDate.toLocaleString());
 
 // -------->Time Methods (get and set)
-//get()
+// get()
 // const curTime = new Date();
 
-//how to get the individual Time
+// how to get the individual Time
 
 // console.log(curTime.getTime());
 // //The getTime() method returns the number of milliseconds since
@@ -700,7 +700,7 @@
 // console.log(curTime.getSeconds());
 // console.log(curTime.getMilliseconds());
 
-//set()
+// set()
 
 // let curTime = new Date();
 // console.log(curTime.setTime());
@@ -711,19 +711,19 @@
 // console.log(curTime.setMilliseconds(5));
 
 
-//------>Practice Time
+// ------>Practice Time
 // new Date().toLocaleTimeString();
 // console.log(curTime.toLocaleTimeString());//6:01:26 PM
 // console.log(curTime.toLocaleDateString());//2/3/2024
 // console.log(curTime.toLocaleString());// 2 / 3 / 2024, 6:02: 26 PM
 
-//----->Section-9 Math object in javascript-----////
+// ----->Section-9 Math object in javascript-----////
 
-//The Javascript Math object allows you to perform mathematical tasks on numbers.
+// The Javascript Math object allows you to perform mathematical tasks on numbers.
 
 // console.log(Math.PI);
 
-//Math.round()
+// Math.round()
 // //returns the value of x rounded to its nearest integer 
 
 // let num = 10.99999;
@@ -738,257 +738,257 @@
 // Math.pow(x,y) //returns the value of x to the power of y
 // console.log(math.pow(2,3));
 
-//Math.sqrt()
-//Math.sqrt(x) returns the square root of x
+// Math.sqrt()
+// Math.sqrt(x) returns the square root of x
 
 // console.log(Math.sqrt(25));
 // console.log(Math.sqrt(81));
 // console.log(Math.sqrt(66));//we can find sqaure root by using sqrt()
 
-//Math.abs()
-//Math.abs(x) returns the absolute (positive) value of x
+// Math.abs()
+// Math.abs(x) returns the absolute (positive) value of x
 
 // console.log(Math.abs(-55));
 // console.log(Math.abs(-55.5));
 // console.log(Math.abs(-955));// it returns the positive value //negetive to positive
 
-//Math.ceil()
-//Math.ceil(x) returns the value of x rounded up to its nearest integers
+// Math.ceil()
+// Math.ceil(x) returns the value of x rounded up to its nearest integers
 
 // console.log(Math.ceil(4.4));
 // console.log(Math.ceil(99.1));//it will defenetily increse the value even if value is above or less than .5//ek number jyda dega if point me value hogi to
 
-//Math.floor()
-//Math.floor(x) returns the value of x rounded down to its nearest integer
+// Math.floor()
+// Math.floor(x) returns the value of x rounded down to its nearest integer
 
 // console.log(Math.floor(4.7));
 // console.log(Math.floor(99.99));//jo hai vo hi value return karega point se phele ki
 
-//Math.min()
-//Math.min() can be used to find the lowest value in a list of argument     
+// Math.min()
+// Math.min() can be used to find the lowest value in a list of argument     
 
 // console.log(Math.min(0,150,30,20,-8,-200));
 
-//Math.max()
-//Math.max() can be used to find the highest value in a list of argument
+// Math.max()
+// Math.max() can be used to find the highest value in a list of argument
 
 // console.log(Math.max(0,150,30,20,-8,-200));
 
-//Math.random()
-//Math.random() returns a random number between 0 (inclusive) to 9
+// Math.random()
+// Math.random() returns a random number between 0 (inclusive) to 9
 
 // console.log(Math.floor(Math.random()*10));//by adding floor method in random it will returns the normal value between 0 to 9
 
-//Math.trunc()
-//The trunc() method returns the integer part of a number
+// Math.trunc()
+// The trunc() method returns the integer part of a number
 
 // console.log(Math.trunc(4.6));
 // console.log(Math.trunc(-99.1));//it returns any number given before the point or in decimal number
-//it won't give output in decimal
+// it won't give output in decimal
 
-//Practice Time
+// Practice Time
 
-//if the argument is a positive number, Math.trunc() is equivalent to 
-//Math.floor(),
-//otherwise Math.trunc() is equivalent to Math.ceil().
+// if the argument is a positive number, Math.trunc() is equivalent to 
+// Math.floor(),
+// otherwise Math.trunc() is equivalent to Math.ceil().
 
 
-//----->Section 10. DOM in javascript
-//Windows vs document
-//DOM vs BOM
-//DOM navigation
-//Searching and getting Element Reference
+// ----->Section 10. DOM in javascript
+// Windows vs document
+// DOM vs BOM
+// DOM navigation
+// Searching and getting Element Reference
 
 
 // // --->//Windows vs document
 
 // 1.Window is the main container or we can say that 
-//globle object and any operation related to entire
-//browser window can be a part of window object.
+// globle object and any operation related to entire
+// browser window can be a part of window object.
 
-//For ex ---> the history or to find the url etc.
+// For ex ---> the history or to find the url etc.
 
 // 1.Where as in DOM is the chile of window object.
 
-//2. All the members like objects, method or properties.
-//If they are the part of window object then we do not refer 
-//the window object. Since window is a globle object 
-//So, you do not have to write down window
+// 2. All the members like objects, method or properties.
+// If they are the part of window object then we do not refer 
+// the window object. Since window is a globle object 
+// So, you do not have to write down window
 
-//3.Where as the DOM is the child of window object.
-//4.Where in the DOM we need to refer the document,if 
-//we want to use the document object methods or properties.
+// 3.Where as the DOM is the child of window object.
+// 4.Where in the DOM we need to refer the document,if 
+// we want to use the document object methods or properties.
 
-//5. Window has methods, properties and object. ex
-//setTimeout() or setInterval are the methods, where as 
+// 5. Window has methods, properties and object. ex
+// setTimeout() or setInterval are the methods, where as 
 // Document is the Object of the window and it also has 
 // screen Object of window and also has a screen object with properties 
 // describing the physical display.
 
-//6. Document is just the object of the global object that is window, which deals with the document, the HTML element themselves.
-//html k lie kaam ho to document use karo uske alava window related ho to window kar lo
+// 6. Document is just the object of the global object that is window, which deals with the document, the HTML element themselves.
+// html k lie kaam ho to document use karo uske alava window related ho to window kar lo
 
-//Window is parent of each and every things ->document DOM & BOM & Javascript
-//BOM or Window both are same -> Navigator,screen,location,frame,history,XML HttpRequest
-//Javascript -> Object,Array,Function
+// Window is parent of each and every things ->document DOM & BOM & Javascript
+// BOM or Window both are same -> Navigator,screen,location,frame,history,XML HttpRequest
+// Javascript -> Object,Array,Function
 
-//Section 3: Navigate throught DOM
+// Section 3: Navigate throught DOM
 
-//DOM -> HTML is root element of your document 
-//in dom ".(dot)" means class and "#means=ID" 
-//code run on console
-//1.document.documentElement
-//returns the Element that is the root elements of the document.
-//document.doctype-> //returns the !DOCTYPE html
-//2.document.head -> returns the head part of html document <head></head> type.
-//3.document.body->//<body> </body> returns the body section part display everything under body tag
-//4.document.body.childnNodes->  (includes tab,enter and whitespace //list of the direct children only
-//5.document.children (without text node,only regular Elements)
-//6.document.childNodes.length ->  returns the lenght of the children 
+// DOM -> HTML is root element of your document 
+// in dom ".(dot)" means class and "#means=ID" 
+// code run on console
+// 1.document.documentElement
+// returns the Element that is the root elements of the document.
+// document.doctype-> //returns the !DOCTYPE html
+// 2.document.head -> returns the head part of html document <head></head> type.
+// 3.document.body->//<body> </body> returns the body section part display everything under body tag
+// 4.document.body.childnNodes->  (includes tab,enter and whitespace //list of the direct children only
+// 5.document.children (without text node,only regular Elements)
+// 6.document.childNodes.length ->  returns the lenght of the children 
 
-//--->Practice Time
-//How to check whether an element has child nodes or not?
-//We will use hasChildNodes() document.body.hasChildNodes() -> true returns true
+// --->Practice Time
+// How to check whether an element has child nodes or not?
+// We will use hasChildNodes() document.body.hasChildNodes() -> true returns true
 
-//--->Practice Time
-//--->How to find the child in DOM tree -> 
-//document.body.fistChild
-//document.body.firstElementChild
-//document.body.firstElementChild.firstElementChild
-//const firstChld = document.body.firstElementChild.firstElementChild - undefined
-//firstChild
-//firstChild.style.color = "grey"
+// --->Practice Time
+// --->How to find the child in DOM tree -> 
+// document.body.fistChild
+// document.body.firstElementChild
+// document.body.firstElementChild.firstElementChild
+// const firstChld = document.body.firstElementChild.firstElementChild - undefined
+// firstChild
+// firstChild.style.color = "grey"
 
-//Another way
-//const childTwo = document.querySelector('.child-two');
-//childTwo
-//childTwo.style.color = "yellow"
-//--> document.body.nextSibling
-//-->document.body.prevoiusSibling
-//document.body.prevoiusElementSibling
-//document.head.nextElementSibling
+// Another way
+// const childTwo = document.querySelector('.child-two');
+// childTwo
+// childTwo.style.color = "yellow"
+// --> document.body.nextSibling
+// -->document.body.prevoiusSibling
+// document.body.prevoiusElementSibling
+// document.head.nextElementSibling
 
-//firstChild vs fistElementChild
-//lastChild vs lastElementChild
+// firstChild vs fistElementChild
+// lastChild vs lastElementChild
 
-//--->How to find the parent nodes
-//document.body.parentNode
-//document.body.parentElement
+// --->How to find the parent nodes
+// document.body.parentNode
+// document.body.parentElement
 
-//-->How to find or access the siblings
-//document.body.nextSibling
-//document.body.nextElementSibling
-//document.body.previousSibling
-//document.body.previousElementSibling
+// -->How to find or access the siblings
+// document.body.nextSibling
+// document.body.nextElementSibling
+// document.body.previousSibling
+// document.body.previousElementSibling
 
 
-//Section 4: How to search the Element and the Refrences 
-//We will see the new file
-//Interview question
-//-> Difference between getElementByID and query selector
+// Section 4: How to search the Element and the Refrences 
+// We will see the new file
+// Interview question
+// -> Difference between getElementByID and query selector
 
 
 // ***************************************************
 
-//Section 11----> Events in Javascript
+// Section 11----> Events in Javascript
 
-//HTML events are "things" that happen to HTML element.
-//When Javascript is used in HTML pages, Javascript can "react" on these events.
+// HTML events are "things" that happen to HTML element.
+// When Javascript is used in HTML pages, Javascript can "react" on these events.
 
-//--->HTML Events 
-//An HTML event can be somthing the browser does, or something a user does.
+// --->HTML Events 
+// An HTML event can be somthing the browser does, or something a user does.
 
-//Here are some example of HTML events:
+// Here are some example of HTML events:
 
-//An HTML web page has finished loading 
-//An HTML input field was changed 
-//An HTML button was clicked 
-//often, when events happen, you may want to do something.
-//javascript lets you execute code when events are detected.
-//HTML allows events handler attributes, which Javascript code, 
-//to be added to HTML element.
+// An HTML web page has finished loading 
+// An HTML input field was changed 
+// An HTML button was clicked 
+// often, when events happen, you may want to do something.
+// javascript lets you execute code when events are detected.
+// HTML allows events handler attributes, which Javascript code, 
+// to be added to HTML element.
 
-//-------> Section:1 4 ways of writing Evenets in Javascript
+// -------> Section:1 4 ways of writing Evenets in Javascript
 
-//1: Using inline events alert().
-//2:By calling a function (we already seen and most common way of writing)
-//3:Using Inline events (HTML onclick="" property and element.onClick)
-//4:Using Event Listeners (addEventListener and IE's attachEvent)
+// 1: Using inline events alert().
+// 2:By calling a function (we already seen and most common way of writing)
+// 3:Using Inline events (HTML onclick="" property and element.onClick)
+// 4:Using Event Listeners (addEventListener and IE's attachEvent)
 
-//Check the events HTML File
+// Check the events HTML File
 
-//Section 2: What is Event Object?
-//Event object is the parent object of the event object.
-//for example
-//MouseEvent,focusEvent, KeyboardEvent etc
+// Section 2: What is Event Object?
+// Event object is the parent object of the event object.
+// for example
+// MouseEvent,focusEvent, KeyboardEvent etc
 
-//Section 3: MouseEvent in Javascript
-//The MouseEvent Object 
-//Event that occur when the mouse intersect with the HTML 
-//document belongs to the MouseEvent Object.
+// Section 3: MouseEvent in Javascript
+// The MouseEvent Object 
+// Event that occur when the mouse intersect with the HTML 
+// document belongs to the MouseEvent Object.
 
-//Section 4: Keyboard in Javascript
-//Event that occurs when user presses a key on the keyboard,
-//belongs to the KeyboardEvent object.
+// Section 4: Keyboard in Javascript
+// Event that occurs when user presses a key on the keyboard,
+// belongs to the KeyboardEvent object.
 
-//Section 5: InputEvents in Javascript
-//The onchange event occurs when the value of an element has been changed.
+// Section 5: InputEvents in Javascript
+// The onchange event occurs when the value of an element has been changed.
 
-//For radiobutton and checkboxes, the onchange event occurs when the 
-//chacked state has been changed.
+// For radiobutton and checkboxes, the onchange event occurs when the 
+// chacked state has been changed.
 
-//************************************************************************************** */
+// ************************************************************************************** */
 
-//7.Interview Question
-//Difference between onClick and addEventListner
-//--> Conclusion
-//This is becuase addEventListner does not overwrite existing event handlers ,
-//where as onclick overrides any existing onclick = fn event handlers.
+// 7.Interview Question
+// Difference between onClick and addEventListner
+// --> Conclusion
+// This is becuase addEventListner does not overwrite existing event handlers ,
+// where as onclick overrides any existing onclick = fn event handlers.
 
-//The other significat difference of course is that onclick will always work, 
-//whereas addEventListener does not work in old browser
-//......................................................................................................//
+// The other significat difference of course is that onclick will always work, 
+// whereas addEventListener does not work in old browser
+// ......................................................................................................//
 
-//Section :11--->Timing Based event in JS
+// Section :11--->Timing Based event in JS
 
 
-//---->Javascript Timing events 
-//
-//The window object allows execution of code at specified time interval.
-//These time intervals are called timing events.
-//the two key methods to use with Javascript are:
+// ---->Javascript Timing events 
+
+// The window object allows execution of code at specified time interval.
+// These time intervals are called timing events.
+// the two key methods to use with Javascript are:
 
 
 // setTimeout(function,milliseconds)
-//Executes a function,after waiting a specified number of milliseconds
+// Executes a function,after waiting a specified number of milliseconds
 
 // setinterval(function,milliseconds)
-//Same as setTimeout(), but reports the execution of the function continuously.
+// Same as setTimeout(), but reports the execution of the function continuously.
 
-//1.setTimeout()
-//2.clearTimeout()
-//3.setInterval()
-//4.clearInterval()
-//----Refer the html page timeventpage
+// 1.setTimeout()
+// 2.clearTimeout()
+// 3.setInterval()
+// 4.clearInterval()
+// ----Refer the html page timeventpage
 
-//8.Interview question
+// 8.Interview question
 
-//Difference between setTimeout and setInterval()?
+// Difference between setTimeout and setInterval()?
 
-//Section 12)--->OOPS in Javascript
+// Section 12)--->OOPS in Javascript
 
 // 1.)What is object literals?
 // 2.)What is 'this' object?
 
 
 // 1.}What is object literals?
-//Object literals is simply a key:value pair of data structure.
+// Object literals is simply a key:value pair of data structure.
 
-//Storing variables and functional together in one container.
+// Storing variables and functional together in one container.
 
-//Object = school bag(containing all things like books, lunch box etc)
+// Object = school bag(containing all things like books, lunch box etc)
 
-//1st way
+// 1st way
 
 // let bioData = {
 //     myName:'Vaibhav Kabira',//here, myName is key:value 
@@ -1001,7 +1001,7 @@
 
 // console.log(bioData.getdata());
 
-//2nd way no need to write function as well after es6
+// 2nd way no need to write function as well after es6
 // let bioData = {
 //     myName:'Vaibhav Kabira',//here, myName is key
 //     myAge:'24',
@@ -1013,7 +1013,7 @@
 
 // console.log(bioData.getdata());
 
-//What if we want object as a value inside an object
+// What if we want object as a value inside an object
 
 // let bioData = {
 //     myName:{
@@ -1031,11 +1031,11 @@
 
 
 // 2.What is this object?
-//The defination of "this" object is that it contain the current context.
-//The this object can have different values depending on where it is placed.
+// The defination of "this" object is that it contain the current context.
+// The this object can have different values depending on where it is placed.
 
 // // For example 1
-//console.log(this.alert('Viper'));
+// console.log(this.alert('Viper'));
 // / it refers to the current context -> and that is window global object
 
 // // Ex; 2
@@ -1074,26 +1074,26 @@
 
 // -->Ex:6
 
-//---->4.Destructring in ES6
-//The destructring assignment syntex is a javascript expression 
-//that makes it possible to unpack values from arrays, 
-//or properties from objects,into distinct variable.
+// ---->4.Destructring in ES6
+// The destructring assignment syntex is a javascript expression 
+// that makes it possible to unpack values from arrays, 
+// or properties from objects,into distinct variable.
 
-//-->Array Destructuring -->like usko tukdo me baat do
+// -->Array Destructuring -->like usko tukdo me baat do
 
-//const myBioData = ['vinod', 'thapa', 26,'bscit-mscit'];
+// const myBioData = ['vinod', 'thapa', 26,'bscit-mscit'];
 
 // let myFname = myBioData[0];
 // let myLname = myBioData[1];
 // let myAge = myBioData[2];
-//let [myFname, myLname, myAge] = myBioData //position matters in array destructuring
+// let [myFname, myLname, myAge] = myBioData //position matters in array destructuring
 
 
-//we can add values too
+// we can add values too
 // let [myFname, myLname, myAge,myDegree] = myBioData
 // console.log(myDegree);
 
-//----->Object destructuring--->
+// ----->Object destructuring--->
 
 // const myBioData ={
 //     myFname:'V',
@@ -1104,17 +1104,17 @@
 // let {myFname,myLname,age} = myBioData;//for object we have to use curly braces
 // console.log(age);
 
-//5.---->Object Properties---
-//-->We can now use Dynamic properties 
+// 5.---->Object Properties---
+// -->We can now use Dynamic properties 
 // let myName = 'Vaibhav';
 // const myBio = {
 //     [myName]: 'How you doin',
 //     [20 + 4]: 'is my age'
 // }
 // console.log(myBio);
-//-> no need to write key and value,if both are same
+// -> no need to write key and value,if both are same
 
-//--->No need to write key and value,if both are same
+// --->No need to write key and value,if both are same
 
 // let myName = 'Vaibhav Kabira';
 // let myAge = 24;
@@ -1125,7 +1125,7 @@
 // }
 // console.log(myBio);
 
-//--->7.Spread Operator
+// --->7.Spread Operator
 
 // const color = ['red','green','blue','white','pink'];
 
@@ -1136,9 +1136,9 @@
 // const myFavColors = [...color,'yelloww','blackie'];
 // console.log(myFavColors);
 
-//***************************************************************************** */
+// ***************************************************************************** */
 
-//----->8.Rest Operator-----
+// ----->8.Rest Operator-----
 // function addNumbers(a, b, c, ...other) {
 //     console.log(other);
 //     return a + b + c;
@@ -1148,30 +1148,30 @@
 
 // ES7 features(2016)
 // 1: array includes()
-//2: exponensiation op() **/
-//console.log(3**3);
+// 2: exponensiation op() **/
+// console.log(3**3);
 
-//ES8 features (2017)************
+// ES8 features (2017)************
 
-//1.String padding //it add space at start and end
-//2.Object.values()
-//3.Object.entries()
+// 1.String padding //it add space at start and end
+// 2.Object.values()
+// 3.Object.entries()
 
-//1.String Padding
+// 1.String Padding
 
 // const message = "MorningStar ";
 // console.log(message);
 // // console.log(message.padStart(5));
 // console.log(message.padEnd(10));
 
-//2.Object.values()
+// 2.Object.values()
 // const person = {name:'MorningStar',age:24}
 
 // console.log(Object.values(person));
 // console.log(Object.entries(person));//convertes the objects value in array
 
-//ES2019***************
-//Array.prototype.flat() and flatMap()
+// ES2019***************
+// Array.prototype.flat() and flatMap()
 // const arr = [
 //     ['zone_1', 'zone_2'],
 //     ['zone_3', 'zone_4'],
@@ -1185,18 +1185,18 @@
 // console.log(arr.flat(Infinity));//to flatten all level array at once use this .flat(infinity) or by level by level flat(2) or 3 or 4
 
 
-//=--->object.fromEnterie()
+// =--->object.fromEnterie()
 // const person = {name:'MorningStar',age:24}
 
 // // console.log(Object.values(person));
 // let arrObj = (Object.entries(person));
 // console.log(Object.fromEntries(arrObj));//convert again it in object
 
-//-->String.prototype.{trimStart,trimEnd} //it simply delete the space from start and end
+// -->String.prototype.{trimStart,trimEnd} //it simply delete the space from start and end
 
 
-//---->ES2020*********
-//1)bigint
+// ---->ES2020*********
+// 1)bigint
 // let oldNum = Number.MAX_SAFE_INTEGER;//is number se agar isske uper koi operation perform karna chahte ho to have to add n at the end.and to ger correct output
 // // console.log(oldNum);
 // const newNum = 9007199254740991n + 12n;
@@ -1204,10 +1204,10 @@
 // console.log(newNum);
 // console.log(typeof (newNum));
 
-//2)Dynamic Import
-//3)Nullish Coalescing
+// 2)Dynamic Import
+// 3)Nullish Coalescing
 
-//--->ES214**************
+// --->ES214**************
 // "use strict";
 
 // let x = 3.14;

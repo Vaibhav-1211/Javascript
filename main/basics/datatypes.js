@@ -30,7 +30,7 @@
 // output will be 2 because in js 1 will be represnted as 1=True and 0=false.
 
 
-//typeof operator
+// typeof operator
 // console.log(typeof(iAmVaibhav));
 
 

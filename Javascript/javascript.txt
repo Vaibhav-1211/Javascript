@@ -1,0 +1,44 @@
+Section 1:
+var - let - const
+- Scop: is region of certian program where define variable exist and recognize and beyond that it can't. 
+- example: 
+{
+  const a = 5  
+console.log(a) 
+}
+
+function name(){
+  let a = 'yo'
+
+    if(true){
+      let a = 'hi'
+      console.log(a);
+    }//this has block level scop 
+    console.log(a);
+}
+
+name();//this is function level scope
+this is know as shadow variable
+
+//Declaration 
+var a;
+var a;
+
+let a;
+let a; //Now it will give error 
+
+const a = 5 //we have to decalare it with initilizer
+
+//RE-intialisation
+
+var a = 5
+a = 5;
+Here we can use both var and let can updated but when it comes to const it will give error it cannot be updated
+const a = 5
+a = 6;
+error: assignment to constant varialble 
+
+//Hoisting
+
+//Javascript execution context
+

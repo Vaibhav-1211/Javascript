@@ -49,22 +49,22 @@
 // var a = 30;
 // var b = 20;
 
-//Equal Op (==)
+// Equal Op (==)
 // console.log(a == b);
 
-//Not Equal op (!=)
+// Not Equal op (!=)
 // console.log(a != b);
 
-//Greater than op (>)
+// Greater than op (>)
 // console.log(a>b);
 
 // //Greater than or Equal (>=)
 // console.log(a>=b);
 
-//Less than (<)
+// Less than (<)
 // console.log(a<b);
 
-//Less than or equal (<=)
+// Less than or equal (<=)
 // console.log(a<=b);
 
 // 5. Logical operator
@@ -75,18 +75,18 @@
 // var a = 30;
 // var b = -20;
 
-//1.Logical AND (&&)
+// 1.Logical AND (&&)
 // The logical AND (&&) operator (logical conjuction) for a set of 
 // operands is true if and if all of its expression are true.
 // console.log(a > b && b < 0);//if both/all the expression are true than and than only && op will work otherwise if one of the expression is false than it will show false only.
 
-//Logical OR (||)
-//The logical OR (||) operator (logical disjunction) for a set of 
+// Logical OR (||)
+// The logical OR (||) operator (logical disjunction) for a set of 
 // operands is true if and only if one or more of its operands is true.
 
 // console.log(a > b || b > 0) //if in the expression only one condition is satisfied or true it will show complete output true. one condition must be true.
 
-//Logical NOT (!)
+// Logical NOT (!)
 // The Logical not (!) operator (logical complement, negation)
 // takes truth to falsity and vice versa
 
@@ -111,7 +111,7 @@
 // Solution 1:
 // console.log(3**3); //(**) Exponentiation operator
 
-//Solution 2:
+// Solution 2:
 // console.log(5 + "vaibhav");
 
 // Solution 3:
@@ -148,7 +148,7 @@
 
 // console.log(n1 == n2);
 
- //Here double equals checks only value where as in triple equals check value and data type of value
+//  Here double equals checks only value where as in triple equals check value and data type of value
 
 // var n1 = 5;
 // var n2 = '5'
