@@ -82,33 +82,43 @@ console.log(typeof null);
 
 //Math operator
 //minus op
-const age = 2024
-const vaibhavAge =   age - 2000;
-const swayamAge =   age - 2005;
-console.log(vaibhavAge);
-console.log(swayamAge,vaibhavAge);
+// const age = 2024
+// const vaibhavAge =   age - 2000;
+// const swayamAge =   age - 2005;
+// console.log(vaibhavAge);
+// console.log(swayamAge,vaibhavAge);
 
-console.log(vaibhavAge * 2, swayamAge / 21,2 ** 3 );
-//2 ** 3 means 2 to the power of 3 = 2 * 2 *2. It called exponential op
+// console.log(vaibhavAge * 2, swayamAge / 21,2 ** 3 );
+// //2 ** 3 means 2 to the power of 3 = 2 * 2 *2. It called exponential op
 
-//Plus op or concatination op
-const firstName = 'Jonas';
-const lastName = 'Patel';
-console.log(firstName +' ' +lastName);
+// //Plus op or concatination op
+// const firstName = 'Jonas';
+// const lastName = 'Patel';
+// console.log(firstName +' ' +lastName);
 
-//typeof oprator which gives type of values
+// //typeof oprator which gives type of values
 
-//Assingment opearators
-let c = 10+5;
-c += 10; //+= means   c = c +10
-c *= 10; 
-c++ ;// c = c + 1
-c--; // c = c -1
-console.log(c);
+// //Assingment opearators
+// let c = 10+5;
+// c += 10; //+= means   c = c +10
+// c *= 10; 
+// c++ ;// c = c + 1
+// c--; // c = c -1
+// console.log(c);
 
-//Comparison Operators: to produce boolean values
-console.log(vaibhavAge > swayamAge);
+// //Comparison Operators: to produce boolean values
+// console.log(vaibhavAge > swayamAge); //> ,<,>=,<=
+// console.log(vaibhavAge >= 18);
+// const isFullAge = vaibhavAge >= 18; 
 
+//Operator precedence
+const now = 2037;
+const ageJonas = now - 1991;
+const ageSarah = now - 2018;
+console.log(now - 1991 > now - 2018);
 
+let x, y
+x = y = 25 - 10 - 5; //x = y = 10 x = 10
+console.log(x,y); 
  
 
