@@ -79,8 +79,36 @@ console.log(typeof null);
 // //not recommend to use it
 
 //4. Operators
-const vaibhavAge =   2024 - 2000;
-const SwayamAge =   2024 - 2005;
+
+//Math operator
+//minus op
+const age = 2024
+const vaibhavAge =   age - 2000;
+const swayamAge =   age - 2005;
 console.log(vaibhavAge);
-console.log(SwayamAge);
+console.log(swayamAge,vaibhavAge);
+
+console.log(vaibhavAge * 2, swayamAge / 21,2 ** 3 );
+//2 ** 3 means 2 to the power of 3 = 2 * 2 *2. It called exponential op
+
+//Plus op or concatination op
+const firstName = 'Jonas';
+const lastName = 'Patel';
+console.log(firstName +' ' +lastName);
+
+//typeof oprator which gives type of values
+
+//Assingment opearators
+let c = 10+5;
+c += 10; //+= means   c = c +10
+c *= 10; 
+c++ ;// c = c + 1
+c--; // c = c -1
+console.log(c);
+
+//Comparison Operators: to produce boolean values
+console.log(vaibhavAge > swayamAge);
+
+
+ 
 
