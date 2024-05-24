@@ -180,6 +180,122 @@ console.log(typeof null);
 //7. Type Conversion and Coercion
 //Type conversion means when we manually convert type to another where as type coercion is when js automatically converts type bts for us.
 
-const inputYear = '1991';
-console.log(Number(inputYear))
-console.log(inputYear + 18);// to fix this we can use inbuilt js Number() fn.
+// const inputYear = '1991';
+// console.log(Number(inputYear), inputYear)
+// console.log(inputYear + 18);// to fix this we can use inbuilt js Number() fn.
+
+// console.log(Number(inputYear) + 18);
+
+// console.log(Number("Jonas"))
+// console.log(typeof (NaN))//type of NaN is number which is invalid one
+
+// console.log(String(23), 23);
+
+// //Type Coercion:It happens whenever an operator dealing with two values that have different types
+// console.log('I am ' + 24 + 'years old')//number converted to strings by js
+// console.log('23' - '10' - 3);//strings converted to number it deducts(same goes with the * , / also perform the respective action of their operators) the values. And when we add + operator it treat as string and add it.
+
+// //Guess the game
+// let n = '1' + 1;
+// n = n - 1;
+// console.log(n);
+
+// 8.Truthy and falsy values
+//There are 5 falsy values: 0, '' ,undefined , null ,NaN
+// console.log(Boolean(0));
+// console.log(Boolean(undefined));
+// console.log(Boolean('Jonas'));//Any string that is not an empty strings is truthy value
+// console.log(Boolean({}));
+// console.log(Boolean(''));
+
+
+// const money = 0;
+// if (money) {//no matter what value is here js will converted it to boolean
+//   console.log("Don't spend it all ;)")
+// } else {
+//   console.log("You should get a job!")
+// }
+// let height; //it will give else part output due to not value defined to variable.
+// //giving 0 value to varible also perform same result it is bug
+// if (height) {
+//   console.log("Yay Height is defined")
+// } else {
+//   console.log("Height is Undefined")
+// }
+
+// //9. Equality operator. == VS ===
+// const age = 18; //const age is '18' than second will exicutes
+// if (age === 18) {
+//   console.log("You became adult")
+// }
+// //this will return true or false value! so a boolean value.
+// //=== it only returns true when both values are same 
+
+// if (age == 18) {
+//   console.log("You became adult ")
+// }//it is loosly equal 
+
+// const favourite = prompt("What is your fav number")
+// console.log(favourite)
+
+// if(favourite != 23) console.log('why not 23')
+
+// 10. Boolean logic
+// && when all value is true then this will return true 
+// || one of value is true
+// ! not operator vice verce the value if value is false it will give true
+// !A
+// Logical Operator
+// const hasDriversLicense = true;
+// const hasGoodVision = false;
+
+// console.log(hasDriversLicense && hasGoodVision);
+// console.log(hasDriversLicense || hasGoodVision);
+// console.log(!hasDriversLicense);//invert the value
+
+//Assignment
+// const scoreDolphines = (96+108+89) / 3;
+// const scoreKoalas = (88 + 91 + 110) / 3;
+
+// console.log(scoreDolphines, scoreKoalas);
+
+// if(scoreDolphines > scoreKoalas){
+//   console.log("Dolphine win the trophy");
+// }else if (scoreKoalas > scoreDolphines){
+//   console.log("Koalas wins the trophy")
+// }else if (scoreDolphines === scoreKoalas){
+//   console.log("Both win the trophy!")
+// }
+
+// 11.The switch statment
+// const day = 'thursday';
+
+// switch (day){
+//   case 'monday'://day === "monday"
+//   console.log('Plan course structure');
+//   console.log('Go to coding meetup');
+//   break;
+//   case 'tuesday':
+//   case 'wednesday':
+//   case 'friday':
+// }
+
+//12. Statements and expression
+//Expression is pice of code that produces a value. ie, 3+4 is expression because it produces value
+//true && false && !false
+//Statement is bigger pice of code which executed and doen't produce value
+// if (23 > 39){
+//   const str = '23 is smaller';
+// }
+
+// 13. The conditional operator (ternory)
+const age = 24;
+age >= 18 ? console.log('Adult') : console.log('not an adult')
+
+const drink = age > 18 ? 'can drink' : 'cannot drink';
+console.log(drink)
+
+//we can also use ternary operator in tempalate laterals
+const bill = 275;
+const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
