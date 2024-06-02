@@ -105,46 +105,169 @@
 
 //Reviewing functions
 
-const calcAge = function (birthYear) {
-  return 2037 - birthYear;
+// const calcAge = function (birthYear) {
+//   return 2037 - birthYear;
+// }
+
+// const yearUnitRetirement = function (birthYear, firstName) {
+//   const age = calcAge(birthYear)
+//   const retirement = 65 - age;
+
+//   if (retirement > 0) {
+//     console.log(`${firstName} retires in ${retirement} years.`)
+//     return retirement;//return keyword immidietly exit the function  after returning the value;after that function is done.
+//   } else {
+//     console.log(`${firstName}has already retired .`)
+//     return 0
+//   }
+//   // return retirement;
+//   // return `${firstName} retires in ${retirement} years.`;
+// }
+
+// console.log(yearUnitRetirement(1991, 'Joker'))
+
+// console.log(yearUnitRetirement(1997, 'Joker'))
+// console.log()
+
+// //Code Challenge.
+// const calcAverage = (a, b, c) => (a + b + c / 3)
+// console.log(calcAverage(3, 4, 5));
+
+// //Test 1
+// const scoreDolphins = calcAverage(44, 23, 71);
+// const scoreKoalas = calcAverage(65, 54, 49);
+// console.log(scoreDolphins, scoreKoalas);
+
+// const checkWinner = function (avgDolphins, avgKoalas) {
+//   if (avgDolphins >= 2 * avgKoalas) {
+//     console.log(`Dolphins wins (${avgDolphins} vs. ${avgKoalas})`);
+//   } else if (avgKoalas >= 2 * avgDolphins) {
+//     console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+//   } else {
+//     console.log('No team wins...');
+//   }
+// }
+// checkWinner(scoreDolphins, scoreKoalas);
+
+//6.-------> Arrays
+// const friends = ['Joey', 'Rachel', 'Chandler', 'Ross', 'Phoebe', 'Gunther']
+// console.log(friends);
+
+// //Another way to write which used most | instead of bracates we can write new keyword and doesn't need to be string it can store as many as value in an array | here Array() calling function because we are using parenthesis here.
+// const years = new Array(1991, 1994, 1995, 1996, 2000);
+// console.log(friends[0]);
+
+// console.log(friends.length);
+
+// //we can use this to get last element of an array automatically
+// console.log(friends[friends.length - 1])
+
+// //<mutating the array or in other words no longer need of one the friends of an array.
+
+// friends[2] = 'Jay Uso';
+// console.log(friends);
+
+// //Array can hold all the different values at the same time.
+// const firstName = 'Jonas';
+// const jonas = [firstName, 'Patel', 2037 - 1991, friends]
+// console.log(jonas);
+
+// //Exercise
+// const calcAge = function (birthYear) {
+//   return 2037 - birthYear;
+// }
+// const year = [1990, 1967, 2002, 2010, 2018];
+
+// const age1 = calcAge(year[0]);
+// const age2 = calcAge(year[1]);
+// const age3 = calcAge(year[year.length - 1]);
+// console.log(age1, age2, age3);
+
+// const ages = [calcAge(year[0]), calcAge(year[1]), calcAge(year[year.length - 1])];
+// console.log(ages);
+
+//Javascript has some builtin function that we can directly apply on arrays
+//Basic Array operation (methods)
+
+
+//-->Add elements
+//Push method adds the element to the end of the array and also return the length of the array
+// const friends = ['Joey', 'Chandler', 'Monica'];
+// friends.push('Ross')
+// console.log(friends)
+
+// //Unshift method which add element at the begining of the array and also return the length of the array
+
+// friends.unshift('Rachel Green');
+// console.log(friends)
+
+// //Remove elements
+// //pop method 
+// const popped = friends.pop();//last element will be removed 
+// console.log(popped)
+// console.log(friends)  //it does not returned the length of the array but return the removed elements
+
+// //Shift method
+// friends.shift();
+// console.log(friends) //similar to pop it returned the removed element
+
+// //index of //return the element position where it is placed //returned the position
+
+// console.log(friends.indexOf('Chandler'));//if elemet found then it will returned that element other wise returned -1.
+
+// //include method either retured the true or false value by searching the element from an array
+
+// friends.push(23);
+// console.log(friends.includes('roman'));
+
+// console.log(friends.includes('Seth'));
+// console.log(friends.includes('25'));
+
+// if (friends.includes('Roman')) {
+//   console.log('You have friend called Roman');
+// }
+
+// //Coding Challenge 
+// const calcTip = function (bill) {
+//   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// }
+
+// const bills = [125, 555, 44];
+// const tip = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+// calcTip(bills[2]);
+// const totals = [bills[0] + tip[0], bills[1] + tip[1], bills[2] + tip[2]];
+// console.log(bills, tip, totals);
+
+
+//Introduction to an Array
+//key:value pair //here key is variable name //here object has 6 properties 
+
+const jonas = {
+  firstName: 'Vaibhav',
+  lastName: 'Kabira',
+  age: 2037 - 1991,
+  job: 'Wrestler',
+  friends: ['Roman', 'Seth', 'Solo']
+};
+console.log(jonas)
+
+//Dot. vs Bracket Notation
+console.log(jonas.lastName)
+console.log(jonas["lastName"]);
+
+const nameKey = 'Name';
+console.log(jonas['first' + nameKey]);
+console.log(jonas['last' + nameKey]);
+// console.log(jonas);
+
+const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName,lastName,age,job, and friends');
+// console.log(jonas.interestedIn);
+
+//undefined: When we try to access the property on object that does not exits
+
+if (jonas[interestedIn]) {
+  console.log(jonas[interestedIn]);
+}else {
+  console.log('Wrong Request! Choose between firstName,lastName,age,job, and friends');
 }
 
-const yearUnitRetirement = function (birthYear, firstName) {
-  const age = calcAge(birthYear)
-  const retirement = 65 - age;
-
-  if (retirement > 0) {
-    console.log(`${firstName} retires in ${retirement} years.`)
-    return retirement;//return keyword immidietly exit the function  after returning the value;after that function is done.
-  } else {
-    console.log(`${firstName}has already retired .`)
-    return 0
-  }
-  // return retirement;
-  // return `${firstName} retires in ${retirement} years.`;
-}
-
-console.log(yearUnitRetirement(1991, 'Joker'))
-
-console.log(yearUnitRetirement(1997, 'Joker'))
-console.log()
-
-//Code Challenge.
-const calcAverage = (a, b, c) => (a + b + c / 3)
-console.log(calcAverage(3, 4, 5));
-
-//Test 1
-const scoreDolphins = calcAverage(44, 23, 71);
-const scoreKoalas = calcAverage(65, 54, 49);
-console.log(scoreDolphins, scoreKoalas);
-
-const checkWinner = function (avgDolphins, avgKoalas) {
-  if (avgDolphins >= 2 * avgKoalas) {
-    console.log(`Dolphins wins (${avgDolphins} vs. ${avgKoalas})`);
-  } else if (avgKoalas >= 2 * avgDolphins) {
-    console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
-  } else {
-    console.log('No team wins...');
-  }
-}
-checkWinner(scoreDolphins, scoreKoalas);
