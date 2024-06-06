@@ -190,7 +190,7 @@
 //Basic Array operation (methods)
 
 
-//-->Add elements
+//--->Add elements
 //Push method adds the element to the end of the array and also return the length of the array
 // const friends = ['Joey', 'Chandler', 'Monica'];
 // friends.push('Ross')
@@ -242,32 +242,89 @@
 //Introduction to an Array
 //key:value pair //here key is variable name //here object has 6 properties 
 
+// const jonas = {
+//   firstName: 'Vaibhav',
+//   lastName: 'Kabira',
+//   age: 2037 - 1991,
+//   job: 'Wrestler',
+//   friends: ['Roman', 'Seth', 'Solo']
+// };
+// console.log(jonas)
+
+// //Dot. vs Bracket Notation
+// console.log(jonas.lastName)
+// console.log(jonas["lastName"]);
+
+// const nameKey = 'Name';
+// console.log(jonas['first' + nameKey]);
+// console.log(jonas['last' + nameKey]);
+// // console.log(jonas);
+
+// const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName,lastName,age,job, and friends');
+// // console.log(jonas.interestedIn);
+
+// //undefined: When we try to access the property on object that does not exits
+
+// if (jonas[interestedIn]) {
+//   console.log(jonas[interestedIn]);
+// } else {
+//   console.log('Wrong Request! Choose between firstName,lastName,age,job, and friends');
+// }
+
+// jonas.location = 'Portugal';
+// jonas['twitter'] = '@johncena';
+// console.log(jonas);
+
+// //Challenge 
+// //'jonas has 3 friends and his best friend is called Roman
+
+// console.log(`${jonas.firstName} has ${jonas.friends.length}, and his best friends is ${jonas.friends[0]}`)
+
+//---->Object Methods 
+
 const jonas = {
   firstName: 'Vaibhav',
   lastName: 'Kabira',
-  age: 2037 - 1991,
+  birthYear: 1991,
   job: 'Wrestler',
-  friends: ['Roman', 'Seth', 'Solo']
+  friends: ['Roman', 'Seth', 'Solo'],
+  hasDriverLicense: true,
+
+  // calcAge: function(birthYear){
+  //   return 2037 -  birthYear;
+  // }
+
+  // calcAge: function(){
+  //   console.log(this)//we can access object property by using this keyword
+  //   return 2037 -  this.birthYear;
+  // }
+
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;//with the use of this keyword we can also add new property into the object. or we can do this without the this keyword to but in different above given way.
+    // return this.age;
+  },
+
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()} old ${this.job} and has ${this.hasDriverLicense ? 'a' : 'not'} driver's license.`
+  }
 };
-console.log(jonas)
 
-//Dot. vs Bracket Notation
-console.log(jonas.lastName)
-console.log(jonas["lastName"]);
+//Any function that attache to an object is called the Method.
 
-const nameKey = 'Name';
-console.log(jonas['first' + nameKey]);
-console.log(jonas['last' + nameKey]);
-// console.log(jonas);
+console.log(jonas.calcAge());
+console.log(jonas.age);//simply retriving the property that we have already called.
+console.log(jonas.age);
 
-const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName,lastName,age,job, and friends');
-// console.log(jonas.interestedIn);
+//Challenge time;
+//Jonas is a 46-year old wrestler and he has a drivers licence. and he has no driver license
 
-//undefined: When we try to access the property on object that does not exits
 
-if (jonas[interestedIn]) {
-  console.log(jonas[interestedIn]);
-}else {
-  console.log('Wrong Request! Choose between firstName,lastName,age,job, and friends');
-}
+// if(jonas.hasDriverLicense > 18){
+//   console.log(`${jonas.firstName} is a ${jonas.calcAge()} old ${jonas.job} and he has a driver license!`)
+// }else if(jonas.hasDriverLicense < 18){
+//   console.log(`${jonas.firstName} is a ${jonas.calcAge()} old ${jonas.job} and he has not a driver license!`)
+// }
 
+// console.log(`${jonas.firstName} is a ${jonas.calcAge()} old ${jonas.job} and ${jonas.hasDriverLicense === true ? 'he has a driver license' : 'has a not driving license!'}`)
+
+console.log(jonas.getSummary())
