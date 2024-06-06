@@ -282,49 +282,59 @@
 
 //---->Object Methods 
 
-const jonas = {
-  firstName: 'Vaibhav',
-  lastName: 'Kabira',
-  birthYear: 1991,
-  job: 'Wrestler',
-  friends: ['Roman', 'Seth', 'Solo'],
-  hasDriverLicense: true,
+// const jonas = {
+//   firstName: 'Vaibhav',
+//   lastName: 'Kabira',
+//   birthYear: 1991,
+//   job: 'Wrestler',
+//   friends: ['Roman', 'Seth', 'Solo'],
+//   hasDriverLicense: true,
 
-  // calcAge: function(birthYear){
-  //   return 2037 -  birthYear;
-  // }
+//   // calcAge: function(birthYear){
+//   //   return 2037 -  birthYear;
+//   // }
 
-  // calcAge: function(){
-  //   console.log(this)//we can access object property by using this keyword
-  //   return 2037 -  this.birthYear;
-  // }
+//   // calcAge: function(){
+//   //   console.log(this)//we can access object property by using this keyword
+//   //   return 2037 -  this.birthYear;
+//   // }
 
-  calcAge: function () {
-    this.age = 2037 - this.birthYear;//with the use of this keyword we can also add new property into the object. or we can do this without the this keyword to but in different above given way.
-    // return this.age;
-  },
+//   calcAge: function () {
+//     this.age = 2037 - this.birthYear;//with the use of this keyword we can also add new property into the object. or we can do this without the this keyword to but in different above given way.
+//     // return this.age;
+//   },
 
-  getSummary: function () {
-    return `${this.firstName} is a ${this.calcAge()} old ${this.job} and has ${this.hasDriverLicense ? 'a' : 'not'} driver's license.`
-  }
-};
+//   getSummary: function () {
+//     return `${this.firstName} is a ${this.calcAge()} old ${this.job} and has ${this.hasDriverLicense ? 'a' : 'not'} driver's license.`
+//   }
+// };
 
-//Any function that attache to an object is called the Method.
+// //Any function that attache to an object is called the Method.
 
-console.log(jonas.calcAge());
-console.log(jonas.age);//simply retriving the property that we have already called.
-console.log(jonas.age);
+// console.log(jonas.calcAge());
+// console.log(jonas.age);//simply retriving the property that we have already called.
+// console.log(jonas.age);
 
-//Challenge time;
-//Jonas is a 46-year old wrestler and he has a drivers licence. and he has no driver license
+// //Challenge time;
+// //Jonas is a 46-year old wrestler and he has a drivers licence. and he has no driver license
 
 
-// if(jonas.hasDriverLicense > 18){
-//   console.log(`${jonas.firstName} is a ${jonas.calcAge()} old ${jonas.job} and he has a driver license!`)
-// }else if(jonas.hasDriverLicense < 18){
-//   console.log(`${jonas.firstName} is a ${jonas.calcAge()} old ${jonas.job} and he has not a driver license!`)
-// }
+// // if(jonas.hasDriverLicense > 18){
+// //   console.log(`${jonas.firstName} is a ${jonas.calcAge()} old ${jonas.job} and he has a driver license!`)
+// // }else if(jonas.hasDriverLicense < 18){
+// //   console.log(`${jonas.firstName} is a ${jonas.calcAge()} old ${jonas.job} and he has not a driver license!`)
+// // }
 
-// console.log(`${jonas.firstName} is a ${jonas.calcAge()} old ${jonas.job} and ${jonas.hasDriverLicense === true ? 'he has a driver license' : 'has a not driving license!'}`)
+// // console.log(`${jonas.firstName} is a ${jonas.calcAge()} old ${jonas.job} and ${jonas.hasDriverLicense === true ? 'he has a driver license' : 'has a not driving license!'}`)
 
-console.log(jonas.getSummary())
+// console.log(jonas.getSummary())
+
+//---->Iteration: The for Loop
+
+//for(initial value or declaration;condition;iteration);
+//for loop keep running until condition is TRUE;
+
+for(let rep = 1;rep <= 10; rep ++){ //rep = rep + 1 is similar to write right the rep ++ increment operator.
+  console.log(`Lifting weights repetition ${rep} 💪`)
+}
+
