@@ -239,8 +239,17 @@
 // console.log(bills, tip, totals);
 
 
-//Introduction to an Array
+//Introduction to an Object
 //key:value pair //here key is variable name //here object has 6 properties 
+
+// const jonasArray = [
+//   'Jonas',
+//   'Patel',
+//   2037 - 1991,
+//   'BusinessMan',
+//   ['Harsh','Rajiv','Jay']
+// ];
+
 
 // const jonas = {
 //   firstName: 'Vaibhav',
@@ -334,7 +343,188 @@
 //for(initial value or declaration;condition;iteration);
 //for loop keep running until condition is TRUE;
 
-for(let rep = 1;rep <= 10; rep ++){ //rep = rep + 1 is similar to write right the rep ++ increment operator.
-  console.log(`Lifting weights repetition ${rep} 💪`)
-}
+// for (let rep = 1; rep <= 10; rep++) { //rep = rep + 1 is similar to write right the rep ++ increment operator.
+//   console.log(`Lifting weights repetition ${rep} 💪`)
+// }
 
+//in order to not to repeat same code again and again we use for loop
+
+//---->Looping Arrays, Breaking and Continuing
+//looping through an arrays is most used application 
+
+// const jonas = [
+//   'Jonas',
+//   'Patel',
+//   2037 - 1991,
+//   'BusinessMan',
+//   ['Harsh', 'Rajiv', 'Jay'], true
+// ];
+
+// const types = [];
+
+//How we want to print the data
+// console.log(jonas[0])
+// console.log(jonas[1])
+//...
+// console.log(jonas[2])
+//jonas[5] does not exist
+
+
+
+// for (let v = 0; v < 5; v++) {
+//   console.log(jonas[v]);
+// }
+// for (let v = 0; v < jonas.length; v++) {
+//   //Reading from jonas array
+//   console.log(jonas[v], typeof jonas[v]);
+
+//   // Filling types array--->{1st way to doing adding elements into the array}
+//   // types[v] = typeof jonas[v];
+
+//   //push method -> typeof array at position [v]
+//   types.push(typeof [v]);
+
+// };
+
+// console.log(types);
+// //Right now we are just reading the value of loop of an array
+
+// //2nd Example
+// const year = [1991, 2007, 1969, 2020];
+// const ages = [];
+
+// for (let i = 0; i < year.length; i++) {
+//   ages.push(2037 - year[i]);
+// };
+// console.log(ages);
+
+//---->2 important statements about loops
+
+//Continue and break
+//with Continue we can exit the current iteration of the loop.
+//continue; keyword just
+// console.log('---- Only Strings ----')
+// for (let v = 0; v < jonas.length; v++) {
+//   if (typeof jonas[v] !== 'string') continue;//it only show the string value.
+
+//   console.log(jonas[v], typeof jonas[v]);
+// };
+
+// //how the break works => it completely terminate the whole loop
+
+// console.log('---- Break with number ----')
+// for (let v = 0; v < jonas.length; v++) {
+//   if (typeof jonas[v] === 'number') break; 
+
+//   console.log(jonas[v], typeof jonas[v]);
+// };
+
+//Loop Backwards and Loop in loops.
+
+// const jonas = [
+//   'Jonas',
+//   'Patel',
+//   2037 - 1991,
+//   'BusinessMan',
+//   ['Harsh', 'Rajiv', 'Jay']
+// ];
+
+//initially looped from starting like 0,1,2...4
+//Now backwards loop means 4,3,2,1
+
+// for (let i = jonas.length - 1; i >= 0; i--) {
+//   console.log(i, jonas[i]);
+// };
+
+//How to create loop inside of loop
+//3 exercises and each 3 exercise have the 5 reps of lifting weights.
+
+// for (let exercise = 1; exercise < 4; exercise++) {
+//   console.log(`-------Exercise ${exercise}`);
+
+//   for(let rep = 1; rep < 6; rep++){
+//     console.log(`Exercise ${exercise}: Lifting weight repetation ${rep} 💪`);
+//   };
+// };
+
+// for (let star = 1; star < 6; star++) {
+//   console.log(`*`)
+//   for (let pattern = 1;pattern < star; pattern++ ){
+//     console.log(`* `);
+//   }
+// }
+
+//Print star patterns.
+// function printRightTriangleUpwards(rows) {
+//   for (let i = 1; i <= rows; i++) {
+//     let stars = "";
+//     for (let j = 1; j <= i; j++) {
+//       stars += "*";
+//     }
+//     console.log(stars);
+//   }
+// }
+
+// printRightTriangleUpwards(5); // Output:
+// *
+// **
+// ***
+// ****
+// *****
+
+
+
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Yo Light weight baby ${rep}`);
+// }
+//The while loop
+
+//while(condition){
+//}
+
+// console.log(`-----While Loop`)
+// // let reps = 1;
+// // while (reps <= 10) {//while this condition got true
+// //   console.log(`Yo Light weight baby ${reps}`);
+// //   reps++
+// // }
+
+// //Counter depends on random number
+// let dice = Math.trunc(Math.random() * 6) + 1;
+
+// while (dice !== 6) {
+//   console.log(`You rolled a ${dice}`);
+//   dice = Math.trunc(Math.random() * 6) + 1;
+//   if (dice === 6) console.log('Loop is about to end...')
+// }
+//whenever when we do need without counter while loop is best choice!
+
+//Coding challenge
+
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+for (let i = 0; i < bills.length; i++) {
+  const tip = calcTip(bills[i]);
+  tips.push(tip);
+  totals.push(tip + bills[i]);
+}
+console.log(bills, tips, totals);
+
+//Average 
+const calcAverage = function (arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    //sum = sum + arr[i];
+    sum = sum += arr[i];
+  }
+  return sum / arr.length;
+}
+console.log(calcAverage([2, 3, 6]));
+console.log(calcAverage(totals));
+console.log(calcAverage(tips));
