@@ -18,7 +18,15 @@ body {
   /* background-color: #60b347; */
 }
 
+
+
 /* LAYOUT */
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+}
+
 header {
   position: relative;
   height: 35vh;
