@@ -1,0 +1,10 @@
+1. Document Object Modal - DOM: Structured representation of HTMK documents. Allows Javascript to access HTML elements and styles to Manipulate them.
+
+- In js function are the varible which the values
+
+2.Execution context and the call stack
+  - Scope Chain 
+  types of Scope
+  Global ,function,block scope (E6)
+difference between scope chain and call stack
+
