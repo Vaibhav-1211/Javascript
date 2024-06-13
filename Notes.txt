@@ -8,3 +8,30 @@
   Global ,function,block scope (E6)
 difference between scope chain and call stack
 
+3.Variable environment: Hoisting and the TDZ;
+- Hoisting: Makes some types of variable accessible/usable in the code before they are actually declared.'Variable lifted to the top of their scope'.
+-> Behind the scenes 
+Before execution, code is scanned for variable declarations, and for each variable, a new property is created in the variable environment object.
+
+4. this keyword: Special variable that is created for every execution context (every function). Takes the value of (points to ) the 'owner' of the function in which the this keyword is used.
+
+- Method this = object that is calling the method.
+- simple function call this = undefined
+- Arrow function this = this of surrounding function (lexical this)
+- event listener this = DOM element that the handler is attached to.
+- new,call,apply,bind ->
+this does NOT point to the function itself, and also NOT the this variable environment.
+
+
+JS Engine => Call Stack and Heap
+
+call stack where all function are executed and heap where all objects are stored or memory.
+
+
+Big topics that how js works bts
+1. Prototype Inheritance : OOP with Javascript
+2.Event Loop: Asynchronous Javascript: Promises,Async,Await and AJAX.
+3. How the DOM Really Works: Advanced DOM and Events
+
+
+
