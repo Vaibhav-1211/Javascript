@@ -1,0 +1,1 @@
+1.Destructuring is an ES6 feature and its way of unpacking values from an array or objects in to separate variables in other words to break complex data structures down into a smaller data structures like variables.
