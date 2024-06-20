@@ -8,6 +8,21 @@ const flights =
 
 const weekdays = ['mon', 'tue', 'wed', 'thus', 'fri', 'sat', 'sun'];
 
+const openingHours = {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -15,21 +30,10 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
+  //Enhanced Object Literals
+  openingHours,
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
@@ -336,6 +340,7 @@ for (const [i, el] of menu.entries()) {
   console.log(`${i + 1}: ${el}`);
 }
 //.entries() is an array which in each position contains a new array which contains the element and index no. of that element
+//Returns the index no, and element itself.
 
 //------>Enhanced Object Literals
 //1. Any object which we want to use in another object we can simply right the name of that object in that particular object. 
@@ -403,3 +408,33 @@ const users = [
 
 //get the name of first element
 console.log(users[0]?.name ?? 'user array empty');
+
+//Looping Objects: Objects keys,Values,AND Entries.
+
+//Property NAMES
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+
+let openStr = `We are open on ${properties.length} days:`;
+for (const day of properties) {
+  openStr += `${day},`;
+}
+console.log(openStr);
+
+//Property Values
+const values = Object.values(openingHours);
+console.log(values);
+
+//Entries Object
+const entries = Object.entries(openingHours);
+
+//[key, value]
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
+
+
+
+
+

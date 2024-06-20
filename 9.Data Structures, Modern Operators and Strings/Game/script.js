@@ -90,6 +90,8 @@ const game = {
   },
 };
 
+//Coding Challenge Part 1
+
 // //1.Create one plyer array for each team (variables 'players1 and players2)
 
 // const [players1, players2] = game.players;
@@ -134,18 +136,19 @@ const game = {
 // team1 > team2 && console.log('Team2 is more likely to win!');
 
 //---Looping Arrays: The for-of loop
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
-for (const item of menu) console.log(item);
+// for (const item of menu) console.log(item);
 
-// for (const item of menu.entries()) {
-//   console.log(`${item[0] + 1}: ${item[1]}`);
-// }//old school way
+// // for (const item of menu.entries()) {
+// //   console.log(`${item[0] + 1}: ${item[1]}`);
+// // }//old school way
 
-//new way we can destructure it
+// //new way we can destructure it
 
-for (const [i,el] of menu.entries()) {
-  console.log(`${i + 1}: ${el}`);
-}
+// for (const [i,el] of menu.entries()) {
+//   console.log(`${i + 1}: ${el}`);
+// }
 //.entries() is an array which in each position contains a new array which contains the element and index no. of that element 
 
+//Coding Challenge Part2
