@@ -154,76 +154,84 @@ const game = {
 //Coding Challenge Part2
 
 //1. 
-for (const [i, player] of game.scored.entries()) {
-  console.log(`Goal ${i + 1}: ${player}`);
-}
+// for (const [i, player] of game.scored.entries()) {
+//   console.log(`Goal ${i + 1}: ${player}`);
+// }
 
-//2.
-const odds = Object.values(game.odds)
-let average = 0;
-for (const odd of odds) average += odd;
-average /= odds.length;
-console.log(average);
+// //2.
+// const odds = Object.values(game.odds)
+// let average = 0;
+// for (const odd of odds) average += odd;
+// average /= odds.length;
+// console.log(average);
 
-//3.
-for (const [team, odd] of Object.entries(game.odds)) {
-  const teamStr = team === 'x' ? 'draw' : `Victory ${game[team]}`;//to access the team property from game []
-  console.log(`Odd of ... ${teamStr} ${odd}`);
-}
+// //3.
+// for (const [team, odd] of Object.entries(game.odds)) {
+//   const teamStr = team === 'x' ? 'draw' : `Victory ${game[team]}`;//to access the team property from game []
+//   console.log(`Odd of ... ${teamStr} ${odd}`);
+// }
 
 //---->Sets: Is a basically just a collection of uniq values so that means sets cannot have duplicate values.
 
-const ordersSet = new Set([
-  'Pasta',
-  'Pizza',
-  'Pizza',
-  'Risotto',
-  'Pasta',
-  'Pizza',
-]);
-console.log(ordersSet);
-
-console.log(new Set('Joans'));
-
-console.log(ordersSet.size);
-//.has() is method 
-console.log(ordersSet.has('Pizza'));
-console.log(ordersSet.has('Bread'));
-
-//add() method to add
-ordersSet.add('Garlic Bread');
-ordersSet.add('Garlic Bread');
-
-//delete() method
-ordersSet.delete('Risotto');
-console.log(ordersSet);
-
-//clear()
-// ordersSet.clear();
+// const ordersSet = new Set([
+//   'Pasta',
+//   'Pizza',
+//   'Pizza',
+//   'Risotto',
+//   'Pasta',
+//   'Pizza',
+// ]);
 // console.log(ordersSet);
 
+// console.log(new Set('Joans'));
 
-//In sets there is no Index
-//Whether the certain value is in the Set or not and thats why we have has() method 
-//Sets are also iterable.So we can loop over them.
+// console.log(ordersSet.size);
+// //.has() is method 
+// console.log(ordersSet.has('Pizza'));
+// console.log(ordersSet.has('Bread'));
 
-for (const order of ordersSet) console.log(order);
+// //add() method to add
+// ordersSet.add('Garlic Bread');
+// ordersSet.add('Garlic Bread');
 
-//Example:
-const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+// //delete() method
+// ordersSet.delete('Risotto');
+// console.log(ordersSet);
 
-//spread op = (...unpack things)
-//(...packthings) = pack everything
-const staffUnique = [...new Set(staff)];
-console.log(staffUnique);
+// //clear()
+// // ordersSet.clear();
+// // console.log(ordersSet);
 
-//Now we only wanted to know that how many different positions are there size() property is very useful
 
-console.log(new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size);
+// //In sets there is no Index
+// //Whether the certain value is in the Set or not and thats why we have has() method 
+// //Sets are also iterable.So we can loop over them.
 
-//Counting how many different letters in a string and string is also iterable.
-console.log(new Set('Vaibhav').size);
+// for (const order of ordersSet) console.log(order);
+
+// //Example:
+// const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+
+// //spread op = (...unpack things)
+// //(...packthings) = pack everything
+// const staffUnique = [...new Set(staff)];
+// console.log(staffUnique);
+
+// //Now we only wanted to know that how many different positions are there size() property is very useful
+
+// console.log(new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size);
+
+// //Counting how many different letters in a string and string is also iterable.
+// console.log(new Set('Vaibhav').size);
 
 //hence Sets are not intedent to replace array 
 //So whenever we need to store values in order and that might contains duplicates always just use arrays. Because arrays has access to lot arrays method.
 
+//----->Map Fundamentals
+//In javascript Map is data structure that we can use to map values to keys. Just like an in object data is stored in key:value pair in Maps.
+//It can has any type
+
+const rest = new Map();
+rest.set('name','Classic Italiano');
+rest.set(1,'Dimond,Itely');
+console.log(rest.set(2,'Lisbon, Portugal'));
