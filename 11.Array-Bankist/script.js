@@ -65,13 +65,9 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // LECTURES
 
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
@@ -124,3 +120,62 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 //Other methods like push(),pop(),shift(),unshift(),indexof(),includes()
 
 //------>The new at Method
+// const arr = [23, 11, 64];
+// console.log(arr[0]);//older and traditional way to get elements.//[position 0]
+// console.log(arr.at(0));//using at method to get element.//at(position 0)
+
+// //Getting last array element
+// //want to get last element of array and do not know the length of it.
+// console.log(arr[arr.length - 1]);
+// console.log(arr.slice(-1)[0]);//using slice method to get last element//here adding square bracates will make the similar output as above line of codes output.
+// console.log(arr.at(-2));
+
+// //at() method also works on strings
+// console.log('Roman'.at(0));//Output :R
+
+//------->LOOPING Arrays: For each loop
+
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// for (const movement of movements) {
+// for (const [i, movement] of movements.entries()) {
+//   //to get current index here with using for of along with entries in [index,current array element]firsta value is index and second is current array element .
+//   if (movements > 0) {
+//     console.log(`Movement ${i + 1}: You deposited ${movement}`);
+//   } else {
+//     console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`);
+//   }
+// }
+
+//Definition: The forEach method calls this callback function in each iteration it will pass in the current element of the array as an argument.
+//The ForEach method does is to loop over the array, and in each iteration it will execute this callback function here,
+//Biggest difference between for of and for each loop is that you cannot use continue or break statement at all.!!
+console.log('----For Each-----');
+// movements.forEach(function (mov, i, arr) {//we can use small version for movement,index,array
+//   //here alway first (current array element then ,index)
+//   if (mov > 0) {
+//     console.log(`Movement ${i + 1}: You deposited ${mov}`);
+//   } else {
+//     console.log(`Movement ${i + 1}: You withdrew ${Math.abs(mov)}`);
+//   }
+// })
+
+//---->ForEach with Maps and Sets
+
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
+
+//Map
+currencies.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`);
+})
+
+//Set
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+console.log(currenciesUnique);
+currenciesUnique.forEach(function (value, _, map) {//_ underscore is throwaway variable in js which means uneceserry
+  console.log(`${value}: ${value}`);
+})
