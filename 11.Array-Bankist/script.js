@@ -179,3 +179,5 @@ console.log(currenciesUnique);
 currenciesUnique.forEach(function (value, _, map) {//_ underscore is throwaway variable in js which means uneceserry
   console.log(`${value}: ${value}`);
 })
+
+//Creating DOM elements
