@@ -61,6 +61,24 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+const displayMovements = function (movements) {
+  containerMovements.innerHTML = ' ';
+
+  movements.forEach(function (mov, i) {
+    const type = mov > 0 ? 'deposit' : 'withdrawal'
+
+    const html = `
+    <div class="movements__row">
+        <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
+        <div class="movements__value">${mov}</div>
+    </div>
+    `;
+
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+  })
+}
+displayMovements(account1.movements)
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -150,7 +168,7 @@ const inputClosePin = document.querySelector('.form__input--pin');
 //Definition: The forEach method calls this callback function in each iteration it will pass in the current element of the array as an argument.
 //The ForEach method does is to loop over the array, and in each iteration it will execute this callback function here,
 //Biggest difference between for of and for each loop is that you cannot use continue or break statement at all.!!
-console.log('----For Each-----');
+// console.log('----For Each-----');
 // movements.forEach(function (mov, i, arr) {//we can use small version for movement,index,array
 //   //here alway first (current array element then ,index)
 //   if (mov > 0) {
@@ -162,22 +180,22 @@ console.log('----For Each-----');
 
 //---->ForEach with Maps and Sets
 
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
+// const currencies = new Map([
+//   ['USD', 'United States dollar'],
+//   ['EUR', 'Euro'],
+//   ['GBP', 'Pound sterling'],
+// ]);
 
-//Map
-currencies.forEach(function (value, key, map) {
-  console.log(`${key}: ${value}`);
-})
+// //Map
+// currencies.forEach(function (value, key, map) {
+//   console.log(`${key}: ${value}`);
+// })
 
-//Set
-const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
-console.log(currenciesUnique);
-currenciesUnique.forEach(function (value, _, map) {//_ underscore is throwaway variable in js which means uneceserry
-  console.log(`${value}: ${value}`);
-})
+// //Set
+// const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+// console.log(currenciesUnique);
+// currenciesUnique.forEach(function (value, _, map) {//_ underscore is throwaway variable in js which means uneceserry
+//   console.log(`${value}: ${value}`);
+// })
 
 //Creating DOM elements
