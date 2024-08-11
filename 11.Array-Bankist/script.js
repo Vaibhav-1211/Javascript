@@ -79,6 +79,22 @@ const displayMovements = function (movements) {
 }
 displayMovements(account1.movements)
 
+//computing username using for each and map method
+
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner.toLowerCase().split(' ').map(name => name[0]
+    ).join('');
+  });
+}
+// const user = 'Steven Thomas Williams';//stw
+
+
+// console.log(createUsernames(accs));
+createUsernames(accounts);
+console.log(accounts);
+
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -199,3 +215,53 @@ displayMovements(account1.movements)
 // })
 
 //Creating DOM elements
+
+
+//Coding Challenge
+
+// const checkDogs = function (dogsJulia, dogsKate) {
+//   const dogsJuliaCorrected = dogsJulia.splice();
+//   dogsJuliaCorrected.splice(0, 1);
+//   dogsJuliaCorrected.splice(-2);
+//   //dogsJulia.slice(1,3);
+//   console.log(dogsJuliaCorrected);
+// }
+
+// checkDogs([3, 5, 2, 12, 7], [4, 1, 14, 15, 8, 3])
+
+//Data transformation with MAP,FILTER, AND REDUCE
+//Map:we can use to loop over the arrays. It similar to for each method but the difference is that map create a brand new array based on original array.Map method takes an array loops over that array and each iteration it applies call back function that we specifies in our code to the current array element.
+
+//Filter:is used to filter for elements in the original array which satisfy a certain condition.
+
+//Reduce:  use to boil down all the elements of the original array into one single value.
+
+//-->--->THE MAP 
+//Euro to USD conversion
+// const euTOUsd = 1.1;
+
+// const movementUsd = movements.map(function (mov) {
+//   return mov * eurToUsd;
+// });
+// console.log(movements);
+// console.log(movementUsd);
+
+//Using arrow function
+// const movementUsd = movements.map( mov => mov * eurToUsd)
+
+//For of loop
+// const movementsUSDfor = [];
+// for (const mov of movements) movementsUSDfor.push(mov * euTOUsd);
+
+// console.log(movementsUSDfor);
+
+// const movementsDescriptions = movements.map((mov, i, arr) => `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdraw'} ${Math.abs(mov)}`
+// );
+// console.log(movementsDescriptions);
+
+//Computing the username using for each and map method
+
+
+
+
+
