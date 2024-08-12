@@ -76,23 +76,93 @@ const displayMovements = function (movements) {
 
     containerMovements.insertAdjacentHTML('afterbegin', html);
   })
+
+  //--------->Filter Method
+  //filtering the positive value
+  //here (i,arr) optional in case of we need them to use in code
+  const deposits = movements.filter(function (mov, i, arr) {
+    return mov > 0;
+  })
+
+  console.log(movements);
+  console.log(deposits);
+
+  //for of loop
+  const depositsFor = [];
+  for (const mov of movements) if (mov > 0) depositsFor.push(mov)
+  console.log(depositsFor);
+
+  //Withdrawl
+  const withdrawal = movements.filter(function (mov) {
+    return mov < 0;
+  })
+  console.log(movements);
+  console.log(withdrawal);
+
+  //withdrawal arrow funciton
+  const withdrawalArrow = movements.filter(mov => mov < 0);
+  console.log(withdrawalArrow);
+
+  //In all call back function contains this-> current element,current index,entire array
+
+  //The Reduce Method
+  //it also contains accumulator -> is like snowball
+  //The accumulator parameter is the single value that will be returned by the reduce() method. It will contain the value returned by the callback function in each iteration. The item parameter is simply the item from the array, which will change in each iteration just like in the forEach() method.
+
+  console.log(movements);
+
+  // const balance = movements.reduce(function (accum, currElem, currI,) {
+  //   console.log(`Iteration ${currI}: ${accum}`);
+  //   return accum + currElem //in each loop itration we keep adding in the next itration
+  // }, 0);//initial value (jo bhi value inital value rahegi usme + next hoke loop badhta rahega for next itration like yaha per if 100 hota then 100 is first value then + currElem or array value )
+
+  //Using Arrow function
+  const balance = movements.reduce((accum, currElem, currI) => accum + currElem, 0
+    // console.log(`Iteration ${currI}: ${accum}`);
+  );
+
+  console.log(balance);
+  let balance2 = 0;
+  for (const mov of movements) balance2 += mov;
+  console.log(balance2);
+
+  //Finding the Maximum value using reduce
+  const max = movements.reduce((accum, mov) => {
+    if (accum > mov)
+      return accum;
+    else
+      return mov;
+  }, movements[0])
+  console.log(max);
 }
+
 displayMovements(account1.movements)
 
-//computing username using for each and map method
-
-const createUsernames = function (accs) {
-  accs.forEach(function (acc) {
-    acc.username = acc.owner.toLowerCase().split(' ').map(name => name[0]
-    ).join('');
-  });
-}
-// const user = 'Steven Thomas Williams';//stw
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((accum, mov) => accum + mov, 0)
+  labelBalance.textContent = `${balance} EUR`
+};
+calcDisplayBalance(account1.movements);
 
 
-// console.log(createUsernames(accs));
-createUsernames(accounts);
-console.log(accounts);
+
+//------>computing username using for each and map method
+
+// const createUsernames = function (accs) {
+//   accs.forEach(function (acc) {
+//     acc.username = acc.owner.toLowerCase().split(' ').map(name => name[0]
+//     ).join('');
+//   });
+// }
+// // const user = 'Steven Thomas Williams';//stw
+
+
+// // console.log(createUsernames(accs));
+// createUsernames(accounts);
+// console.log(accounts);
+
+
+
 
 
 /////////////////////////////////////////////////
@@ -169,7 +239,7 @@ console.log(accounts);
 
 //------->LOOPING Arrays: For each loop
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // for (const movement of movements) {
 // for (const [i, movement] of movements.entries()) {
@@ -260,6 +330,40 @@ console.log(accounts);
 // console.log(movementsDescriptions);
 
 //Computing the username using for each and map method
+
+//----->Coding challenge 2:
+
+const calcAverageHumanAge = function (ages) {
+  const humanAges = ages.map(age => age <= 2 ? 2 * age : 16 + age * 4)
+  const adults = humanAges.filter(age => age >= 18)
+  console.log(humanAges);
+  console.log(adults);
+
+  // const average = adults.reduce((accum, age) => accum + age, 0) / adults.length;
+
+  //property of average for ex; avg of 2 and 3 (2+3)/2 = 2.5 === 2/2+3/2 = 2.5
+
+  const average = adults.reduce((accum, age, i, arr) => accum + age / arr.length, 0);
+
+  return average;
+
+
+}
+const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3])
+const avg2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4])
+console.log(avg1, avg2);
+
+//The magic of Chaining method
+const eurToUsd = 1.1;
+
+//PIPELINE
+const totalDepositsUSD = movements
+  .filter(mov => mov > 0)
+  .map(mov => mov * eurToUsd)
+  .reduce((accum, mov) => accum + mov, 0);
+console.log(totalDepositsUSD);
+//we can only chain a method after another one if the first one returns an array.
+//So, here we can not chain any more because reduce do not does the same or returns an array.
 
 
 
