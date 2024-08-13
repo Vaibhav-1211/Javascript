@@ -164,6 +164,18 @@ const calcDisplayBalance = function (movements) {
 };
 calcDisplayBalance(account1.movements);
 
+//Event handlers
+
+let currentAccount;
+
+btnLogin.addEventListener('click', function (e) {
+  //Prevent form from submitting
+  e.preventDefault();
+
+  currentAccount = accounts.find(acc => acc.owner === inputLoginUsername.value)
+  console.log(currentAccount);
+
+})
 
 
 //------>computing username using for each and map method
@@ -410,3 +422,21 @@ const calcAverageHumanAge = ages => ages.map(age => (age <= 2 ? 2 * age : 16 + a
 const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3])
 const avg2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4])
 console.log(avg1, avg2);
+
+//----------->Find method
+//We can use find method to retrive one element of an array based on condition
+//Find is the just another method which loops over the array 
+//Unlike filter method the find method don't returns the new array but it will only returns the first element from the array which satisfy the condition
+
+const firstWithdrawal = movements.find(mov => mov < 0);
+console.log(movements);
+console.log(firstWithdrawal);
+
+console.log(accounts);
+//Finding the object using the Find method 
+const account = accounts.find(acc => acc.owner === 'Jessica Davis')
+console.log(account);
+
+
+
+
