@@ -70,7 +70,7 @@ const displayMovements = function (movements) {
     const html = `
     <div class="movements__row">
         <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
-        <div class="movements__value">${mov}</div>
+        <div class="movements__value">${mov}€</div>
     </div>
     `;
 
@@ -138,9 +138,29 @@ const displayMovements = function (movements) {
 
 displayMovements(account1.movements)
 
+const calcDisplaySummary = function (movements) {
+  const incomes = movements.filter(mov => mov > 0).reduce((accum, mov) => accum + mov, 0);
+  labelSumIn.textContent = `${incomes}€`;
+
+  const out = movements.filter(mov => mov < 0).reduce((accum, mov) => accum + mov, 0);
+
+  labelSumOut.textContent = `${Math.abs(out)}€`;
+
+  const interest = movements
+    .filter(mov => mov > 0)
+    .map(deposits => deposits * 1.2 / 100)
+    .filter((int, i, arr) => {
+      console.log(arr);
+      return int >= 1;
+    }).reduce((accum, int) => accum + int, 0);
+
+  labelSumInterest.textContent = `${interest}€`
+}
+calcDisplaySummary(account1.movements)
+
 const calcDisplayBalance = function (movements) {
   const balance = movements.reduce((accum, mov) => accum + mov, 0)
-  labelBalance.textContent = `${balance} EUR`
+  labelBalance.textContent = `${balance} €`
 };
 calcDisplayBalance(account1.movements);
 
@@ -333,25 +353,25 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 //----->Coding challenge 2:
 
-const calcAverageHumanAge = function (ages) {
-  const humanAges = ages.map(age => age <= 2 ? 2 * age : 16 + age * 4)
-  const adults = humanAges.filter(age => age >= 18)
-  console.log(humanAges);
-  console.log(adults);
+// const calcAverageHumanAge = function (ages) {
+//   const humanAges = ages.map(age => age <= 2 ? 2 * age : 16 + age * 4)
+//   const adults = humanAges.filter(age => age >= 18)
+//   console.log(humanAges);
+//   console.log(adults);
 
-  // const average = adults.reduce((accum, age) => accum + age, 0) / adults.length;
+//   // const average = adults.reduce((accum, age) => accum + age, 0) / adults.length;
 
-  //property of average for ex; avg of 2 and 3 (2+3)/2 = 2.5 === 2/2+3/2 = 2.5
+//   //property of average for ex; avg of 2 and 3 (2+3)/2 = 2.5 === 2/2+3/2 = 2.5
 
-  const average = adults.reduce((accum, age, i, arr) => accum + age / arr.length, 0);
+//   const average = adults.reduce((accum, age, i, arr) => accum + age / arr.length, 0);
 
-  return average;
+//   return average;
 
 
-}
-const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3])
-const avg2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4])
-console.log(avg1, avg2);
+// }
+// const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3])
+// const avg2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4])
+// console.log(avg1, avg2);
 
 //The magic of Chaining method
 const eurToUsd = 1.1;
@@ -359,13 +379,34 @@ const eurToUsd = 1.1;
 //PIPELINE
 const totalDepositsUSD = movements
   .filter(mov => mov > 0)
-  .map(mov => mov * eurToUsd)
+  .map((mov, i, arr) => {
+    console.log(arr);
+    return mov * eurToUsd
+  })
+  // .map(mov => mov * eurToUsd)
   .reduce((accum, mov) => accum + mov, 0);
 console.log(totalDepositsUSD);
 //we can only chain a method after another one if the first one returns an array.
 //So, here we can not chain any more because reduce do not does the same or returns an array.
 
 
+// Coding Challenge 3 write the same C2 challenge in arrow function
+
+const calcAverageHumanAge2 = function (ages) {
+  const humanAges = ages.map(age => age <= 2 ? 2 * age : 16 + age * 4)
+  const adults = humanAges.filter(age => age >= 18)
+  console.log(humanAges);
+  console.log(adults);
+  const average = adults.reduce((accum, age, i, arr) => accum + age / arr.length, 0);
+
+  return average;
+}
+
+const calcAverageHumanAge = ages => ages.map(age => (age <= 2 ? 2 * age : 16 + age * 4))
+  .filter(age => age >= 18)
+  .reduce((accum, age, i, arr) => accum + age / arr.length, 0);
 
 
-
+const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3])
+const avg2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4])
+console.log(avg1, avg2);

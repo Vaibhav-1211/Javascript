@@ -33,5 +33,8 @@ Big topics that how js works bts
 2.Event Loop: Asynchronous Javascript: Promises,Async,Await and AJAX.
 3. How the DOM Really Works: Advanced DOM and Events
 
+//Tips on chaining method:
+// First we should not overuse chaining, so we should try to optimize it because chaining tons of methods one after the other can cause a real performance issues if we have really huge arrays. So if we have a huge chain of methods, chained one after the other, we should try to compress all the functionality that they do into as little methods as possible. For example, sometimes we create way more map methods then we actually need, where we could just do it all in just one map call.So when you chain methods like this,keep looking for opportunities of keeping up your codes performance. And second, it is a bad practice in JavaScript to chain methods that mutate the underlying original array.And an example of that is the splice method. So again, you should not chain a method like the splice or the reverse method. I mean, you can do that, and for a small application like this one, it's not a big deal and it's not going to cause problems, but in a large scale application, it's usually always a good practice to avoid mutating arrays.
+
 
 
