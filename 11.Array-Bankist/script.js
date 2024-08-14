@@ -164,7 +164,14 @@ const calcDisplayBalance = function (movements) {
 };
 calcDisplayBalance(account1.movements);
 
-//Event handlers
+//Create user 
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner.toLowerCase().split(' ').map(name => name[0]).join(' ');
+  })
+}
+
+//Event handlers //User Login
 
 let currentAccount;
 
@@ -172,7 +179,7 @@ btnLogin.addEventListener('click', function (e) {
   //Prevent form from submitting
   e.preventDefault();
 
-  currentAccount = accounts.find(acc => acc.owner === inputLoginUsername.value)
+  currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value)
   console.log(currentAccount);
 
 })
