@@ -231,10 +231,18 @@ btnTransfer.addEventListener('click', function (e) {
 });
 
 //------->Request Loan ------>
-btnLoan.addEventListener('click',function(e){
+btnLoan.addEventListener('click', function (e) {
   e.preventDefault()
- const amount = Number(inputLoanAmount.value)
-  
+  const amount = Number(inputLoanAmount.value);
+
+  if (amount > 0 && currentAccount.movements.some(mov => mov >= amount / 10)) {
+    currentAccount.movements.push(amount);
+
+    //Upadate UI
+    updateUI(currentAccount)
+  }//amount * 0.1
+  //Add Movement
+  inputLoanAmount.value = '';
 })
 
 
@@ -531,8 +539,17 @@ console.log(movements);
 //Equality
 console.log(movements.includes(-130));
 
-//Condition
+//SOME:Condition
 console.log(movements.some(mov => mov === -130));
 const anyDeposits = movements.some(mov => mov > 0);
 console.log(anyDeposits);
 
+//EVERY: It is similar to some method difference is that it only returns true if all of the element in array satisfy the condition that we passed in.
+console.log(movements.every(mov => mov > 0));
+console.log(account4.movements.every(mov => mov > 0));
+
+//Separate call back
+const deposit = mov => mov => 0;
+console.log(movements.some(deposit));
+console.log(movements.every(deposit));
+console.log(movements.filter(deposit));
