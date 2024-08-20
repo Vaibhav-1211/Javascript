@@ -230,6 +230,36 @@ btnTransfer.addEventListener('click', function (e) {
   }
 });
 
+//------->Request Loan ------>
+btnLoan.addEventListener('click',function(e){
+  e.preventDefault()
+ const amount = Number(inputLoanAmount.value)
+  
+})
+
+
+//------->Closing account means deleting the object
+//Splice method to delete the account
+//findIndex method------------>
+
+btnClose.addEventListener('click', function (e) {
+  e.preventDefault();
+
+
+  if (inputCloseUsername.value === currentAccount.username && Number(inputClosePin.value) === currentAccount.pin) {
+    const index = accounts.findIndex(acc => acc.username === currentAccount.username);
+    console.log(index);
+
+    //indexOf(23)
+    //delete 
+    accounts.splice(index, 1);
+
+    //hide UI
+    containerApp.style.opacity = 0;
+  }
+  inputCloseUsername.value = inputClosePin.value = '';
+
+})
 
 //------>computing username using for each and map method
 
@@ -491,7 +521,18 @@ const account = accounts.find(acc => acc.owner === 'Jessica Davis')
 console.log(account);
 
 //Implementing transfers money from one user to another
+//---------->FindIndex method------------------>
+//FindIndex method works almost same as the find method but as name says findindex returns the index of the found element but not the element itself.
 
+//----->Some and Every ------------------>
+//Some method is used to test for condition
+console.log(movements);
 
+//Equality
+console.log(movements.includes(-130));
 
+//Condition
+console.log(movements.some(mov => mov === -130));
+const anyDeposits = movements.some(mov => mov > 0);
+console.log(anyDeposits);
 
