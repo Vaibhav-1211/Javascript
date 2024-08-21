@@ -553,3 +553,44 @@ const deposit = mov => mov => 0;
 console.log(movements.some(deposit));
 console.log(movements.every(deposit));
 console.log(movements.filter(deposit));
+
+
+//----->Flat and flatMap
+//---->it flatten the nested array like 1,2,4, etc that is why it call flat method
+//it only goes 1 level deep to flat the array
+
+const arr = [[1, 2, 3], , [4, 5, 6], 7, 8];
+console.log(arr.flat());
+
+
+const arrDeep = [[[1, 2], 3], , [4, [5, 6]], 7, 8];
+console.log(arrDeep.flat(2));
+
+//
+const accountMovements = accounts.map(acc => acc.movements);
+console.log(accountMovements);
+
+const allMovements = accountMovements.flat();
+console.log(allMovements);
+const overallBalance = allMovements.reduce((acc, mov) => acc + mov, 0);
+console.log(overallBalance);
+
+//By using Chaining method
+const overalBalance = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overalBalance);
+
+//flatMap
+//flatmap() method combined the both map and flat method for better performance.
+//it also similar as flat which goes one level deep to flatten the results.
+
+const overalBalance2 = accounts
+  .flatMap(acc => acc.movements).reduce((acc, mov) => acc + mov, 0);
+// .flat()
+
+console.log(overalBalance2);
+
+
+
